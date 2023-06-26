@@ -3,6 +3,18 @@
 require_once "./globals.php";
 
 
+function dd($data,$showType = false):void{
+    echo "<pre style='background-color: #1d1d1d;color: #cdcdcd; padding: 20px; margin: 10px; border-radius: 10px; line-height: 1.2rem;'>";
+    if($showType){
+        var_dump($data);
+    }else{
+        print_r($data);
+    }
+    echo  "</pre>";
+    die();
+}
+
+
 function response($data, $status = 200): string
 {
     header("Content-type:Application/json");
